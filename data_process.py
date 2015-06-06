@@ -44,7 +44,7 @@ def printPath(level, mdbdir, txtdir):
             print'\n' 
             print '-' * (int(dirList[0])), dl
             # 打印目录下的所有文件夹和文件，目录级别+1
-            printPath((int(dirList[0]) + 1), mdbdir + '\\' + dl)
+            printPath((int(dirList[0]) + 1), mdbdir + '\\' + dl, txtdir)
 
 
         
@@ -71,9 +71,10 @@ def mdb2txt(mdbdir,txtdir,filename):
 ##    print s1
     cur.execute(s1)
     for row in cur:
+##        f.write(str(row))
         for i in range(len(row)-1):
             f.write(str(row[i])+'\t')
-        f.write(str(row[len(row)-1])+'\n')
+        f.writetr(row[len(row)-1])+'\n')
 
         
     cur.close()
