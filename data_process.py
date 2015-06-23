@@ -96,7 +96,8 @@ def mdb2txt(filename):
 ##        f.write(str(row))
         for i in range(len(row)-1):
             f.write(str(row[i])+'\t')
-        f.write(str(row[len(row)-1])+'\n')
+        f.writetr(row[len(row)-1])+'\n')
+
         
     cur.close()
     conn.close()
